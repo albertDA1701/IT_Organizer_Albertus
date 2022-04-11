@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- it.television tree view -->
+    <record id="it_television_view_tree" model="ir.ui.view">
+        <field name="name">Televisi(TV)</field>
+        <field name="model">it.television</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="type"/>
+                <field name="harga"/>
+                <field name="kondisi"/>
+                <field name="foto" widget="image"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it.television form view -->
+    <record id="it_television_view_form" model="ir.ui.view">
+        <field name="name">Form Televisi(TV)</field>
+        <field name="model">it.television</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="brand"/>
+                        <field name="type"/>
+                        <field name="harga"/>
+                        <field name="kondisi"/>
+                    </group>
+
+                    <group>
+                        <field name="foto" widget="image"/>
+                    </group>
+                    
+                    <notebook>
+                        <page string="SPESIFIKASI BARANG">
+                            <field name="deskripsi"/> 
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- it.television action window -->
+    <record id="it_television_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Televisi(TV)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">it.television</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="it_peralatan_tv_menu_act" 
+        name="Television(TV)" 
+        parent="it_peralatan_menu_categ" 
+        action="it_television_action" 
+        sequence="25"/>
+
+</odoo>

@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_it_handphone,access.it.handphone,model_it_handphone,,1,1,1,1
+access_it_laptop,access.it.laptop,model_it_laptop,,1,1,1,1
+access_it_television,access.it.television,model_it_television,,1,1,1,1
+access_it_dapur,access.it.dapur,model_it_dapur,,1,1,1,1
+access_it_rumahtangga,access.it.rumahtangga,model_it_rumahtangga,,1,1,1,1
+access_it_order,access.it.order,model_it_order,,1,1,1,1
+access_it_order_detail,access.it.order_detail,model_it_order_detail,,1,1,1,1
+access_it_orderlaptop,access.it.orderlaptop,model_it_orderlaptop,,1,1,1,1
+access_it_order_detaillaptop,access.it.order_detaillaptop,model_it_order_detaillaptop,,1,1,1,1
+access_it_ordertv,access.it.ordertv,model_it_ordertv,,1,1,1,1
+access_it_order_detailtv,access.it.order_detailtv,model_it_order_detailtv,,1,1,1,1
+access_it_orderdapur,access.it.orderdapur,model_it_orderdapur,,1,1,1,1
+access_it_order_detaildapur,access.it.order_detailtv,model_it_order_detaildapur,,1,1,1,1
+access_it_orderrt,access.it.orderrt,model_it_orderrt,,1,1,1,1
+access_it_order_detailrt,access.it.order_detailrt,model_it_order_detailrt,,1,1,1,1

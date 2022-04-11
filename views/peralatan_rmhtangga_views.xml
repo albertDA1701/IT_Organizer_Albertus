@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- it.rumahtangga tree view -->
+    <record id="it_rumahtangga_view_tree" model="ir.ui.view">
+        <field name="name">Peralatan Elektronik Rumah Tangga</field>
+        <field name="model">it.rumahtangga</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="type"/>
+                <field name="harga"/>
+                <field name="kondisi"/>
+                <field name="foto" widget="image"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it.rumahtangga form view -->
+    <record id="it_rumahtangga_view_form" model="ir.ui.view">
+        <field name="name">Form Peralatan Elektronik Rumah Tangga</field>
+        <field name="model">it.rumahtangga</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="brand"/>
+                        <field name="type"/>
+                        <field name="harga"/>
+                        <field name="kondisi"/>
+                    </group>
+
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="foto" widget="image"/>
+                    </group>
+                    
+                    <notebook>
+                        <page string="SPESIFIKASI BARANG">
+                            <field name="deskripsi"/> 
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- it.rumahtangga action window -->
+    <record id="it_rumahtangga_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Peralatan Elektronik Rumah Tangga</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">it.rumahtangga</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="it_peralatan_rumahtangga_menu_act" 
+        name="Peralatan Elektronik Rumah Tangga" 
+        parent="it_peralatan_menu_categ" 
+        action="it_rumahtangga_action" 
+        sequence="40"/>
+
+</odoo>

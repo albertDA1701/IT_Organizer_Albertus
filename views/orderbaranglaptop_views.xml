@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- it.orderlaptop tree view -->
+    <record id="it_orderlaptop_view_tree" model="ir.ui.view">
+        <field name="name">IT Order Laptop</field>
+        <field name="model">it.orderlaptop</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tanggal_pesan"/>
+                <field name="total"/>
+                <field name="orderdetail_laptop_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it.orderlaptop form view -->
+    <record id="it_orderlaptop_view_form" model="ir.ui.view">
+        <field name="name">Form Order Laptop</field>
+        <field name="model">it.orderlaptop</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tanggal_pesan"/>
+                    </group>
+
+                    <group>
+                        <field name="total"/>
+                    
+                        <notebook colspan="4">
+                            <page name="laptop" string="Laptop/PC">
+                                <field name="orderdetail_laptop_ids">
+                                    <tree editable='bottom'>
+                                        <field name="laptop_id"/>
+                                        <field name="foto" widget="image"/>
+                                        <field name="hrg_satuan"/>
+                                        <field name="kuantitas"/>
+                                        <field name="harga" sum='Total Harga'/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- it.orderlaptop action window -->
+    <record id="it_orderlaptop_action" model="ir.actions.act_window">
+        <field name="name">IT Order Laptop/PC</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">it.orderlaptop</field>
+        <field name="view_mode">tree,form</field>
+       
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="it_order_laptop_menu_act" 
+        name="Order Laptop" 
+        parent="it_order_menu_categ" 
+        action="it_orderlaptop_action" 
+        sequence="10"/>
+
+</odoo>

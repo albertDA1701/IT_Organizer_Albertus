@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- it.orderdapur tree view -->
+    <record id="it_orderdapur_view_tree" model="ir.ui.view">
+        <field name="name">IT Order Peralatan Elektronik Dapur</field>
+        <field name="model">it.orderdapur</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tanggal_pesan"/>
+                <field name="total"/>
+                <field name="orderdetail_dapur_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it.orderdapur form view -->
+    <record id="it_orderdapur_view_form" model="ir.ui.view">
+        <field name="name">Form Order Peralatan Elektronik Dapur</field>
+        <field name="model">it.orderdapur</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tanggal_pesan"/>
+                    </group>
+
+                    <group>
+                        <field name="total"/>
+                    
+                        <notebook colspan="4">
+                            <page name="dapur" string="Peralatan Elektronik Dapur">
+                                <field name="orderdetail_dapur_ids">
+                                    <tree editable='bottom'>
+                                        <field name="dapur_id"/>
+                                        <field name="foto" widget="image"/>
+                                        <field name="hrg_satuan"/>
+                                        <field name="kuantitas"/>
+                                        <field name="harga" sum='Total Harga'/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- it.orderdapur action window -->
+    <record id="it_orderdapur_action" model="ir.actions.act_window">
+        <field name="name">IT Order Peralatan Elektronik Dapur</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">it.orderdapur</field>
+        <field name="view_mode">tree,form</field>
+       
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="it_order_peralatan_dapur_menu_act" 
+        name="Order Elektronik Dapur" 
+        parent="it_order_menu_categ" 
+        action="it_orderdapur_action" 
+        sequence="20"/>
+
+</odoo>
