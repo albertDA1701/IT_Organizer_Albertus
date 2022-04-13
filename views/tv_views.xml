@@ -14,7 +14,6 @@
                 <field name="harga"/>
                 <field name="kondisi"/>
                 <field name="foto" widget="image"/>
-                <field name="deskripsi"/>
             </tree>
         </field>
     </record>

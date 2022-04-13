@@ -27,7 +27,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem 
         id="it_partner_menu_act" 
-        name="Pegawai" 
+        name="Daftar Pegawai" 
         parent="it_partner_menu_categ" 
         action="res_partner_action" 
         sequence="50"/>
